@@ -3,7 +3,7 @@
 import time
 import socket
 
-n = 3
+n = 1
 
 for pings in range(n):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

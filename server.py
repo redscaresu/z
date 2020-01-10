@@ -11,7 +11,10 @@ server_socket.bind(('', 12000))
 while True:
     message, address = server_socket.recvfrom(1024)
     msg = message.decode('unicode-escape')
-    #msg = msg.split(' ')
-    #emoji = "\\" + msg[1]
-    print(msg)
-    server_socket.sendto(message, address)
+    msg = msg.split(' ')
+    repeat = int(msg[0])
+    emoji = msg[1]
+
+    for i in range(repeat):
+        print(emoji)
+        server_socket.sendto(message, address)
