@@ -13,10 +13,10 @@ for pings in range(n):
 
     start = time.time()
     client_socket.sendto(message, addr)
-    try:
-        data, server = client_socket.recvfrom(1024)
-        end = time.time()
-        elapsed = end - start
-        print(f'{data} {pings} {elapsed}')
-    except socket.timeout:
-        print('REQUEST TIMED OUT')
+    # try:
+    #     data, server = client_socket.recvfrom(1024)
+    #     end = time.time()
+    #     elapsed = end - start
+    #     print(f'{data} {pings} {elapsed}')
+    # except socket.timeout:
+    #     print('REQUEST TIMED OUT')

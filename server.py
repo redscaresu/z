@@ -14,9 +14,9 @@ while True:
     msg = msg.split(' ')
     repeat = int(msg[0])
     emoji = msg[1]
-    output = []
+    emojiList = []
 
     for i in range(repeat):
-        output.append(emoji)
+        emojiList.append(emoji)
     
-    print(output)
+    print(*emojiList, sep="")
