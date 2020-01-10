@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 
-import random
+#TODO, this needs to be broken up into separate functions
+
 import socket
-
-
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server_socket.bind(('', 12000))
@@ -13,11 +12,16 @@ while True:
     
     msg = message.decode('unicode-escape')
     msg = msg.split(' ')
-    
+
+    #TODO input validation server side, repeat must be int, emoji must conform unicode table   
     repeat = int(msg[0])
     emoji = msg[1]
-    separator = msg[2]
     
+    #TODO assumption is that user has provided the correct number of arguments
+    if len(msg) > 2:
+        separator = msg[2]
+    else:
+        separator = ''
     
     emojiList = []
 
