@@ -10,13 +10,18 @@ server_socket.bind(('', 12000))
 
 while True:
     message, address = server_socket.recvfrom(1024)
+    
     msg = message.decode('unicode-escape')
     msg = msg.split(' ')
+    
     repeat = int(msg[0])
     emoji = msg[1]
+    separator = msg[2]
+    
+    
     emojiList = []
 
     for i in range(repeat):
         emojiList.append(emoji)
     
-    print(*emojiList, sep="")
+    print(*emojiList, sep=separator)
