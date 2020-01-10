@@ -14,7 +14,9 @@ while True:
     msg = msg.split(' ')
     repeat = int(msg[0])
     emoji = msg[1]
+    output = []
 
     for i in range(repeat):
-        print(emoji)
-        server_socket.sendto(message, address)
+        output.append(emoji)
+    
+    print(output)
