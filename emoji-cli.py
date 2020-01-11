@@ -3,7 +3,6 @@
 import argparse
 import socket
 
-
 # Create the parser
 my_parser = argparse.ArgumentParser(prog='emoji-client',
                                     usage='%(prog)s [options] emoji',
@@ -22,6 +21,9 @@ my_parser.add_argument('-s',
                        metavar='TYPE_OF_SEPARATOR',
                        type=str,
                        help='the type of separator you want')
+my_parser.add_argument('-r',
+                       action='store_true',
+                       help='if specified do not translate emojis server side')
 
 # Execute the parse_args() method
 args = my_parser.parse_args()
@@ -38,8 +40,12 @@ if args.s is not None:
 else:
     separator = ""
 
-message=f"{numEmojis}:{emoji}:{separator}"
+translate = args.r
+
+message=f"{numEmojis}:{emoji}:{translate}:{separator}"
 message=message.encode()
+print(translate)
+print(message)
 
 #create the client socket
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
