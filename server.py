@@ -24,7 +24,6 @@ while True:
     emoji = msg[1]
 
     #translate incomming emoji against dictionary
-
     for k, v in dict_emoji.items():
         if k == emoji:
             emoji = v
