@@ -7,8 +7,10 @@ import socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server_socket.bind(('', 12000))
 
-dict_emoji = { 'ok' : '\U0001F44C',
+dict_emoji = { 'ok'         : '\U0001F44C',
                'thumbsup'   : '\U0001f44d',
+               'thumbsdown' : '\U0001F44E',
+               'crossed'    : '\U0001F44D', 
             }
 
 while True:
