@@ -9,7 +9,8 @@ for pings in range(n):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     client_socket.settimeout(1.0)
     # message = b'3 \U0001f44d -'
-    message = b'3 \U0001F44C -'
+    # message = b'3 \U0001F44C -'
+    message = b'3:thumbsup:-'
     addr = ("127.0.0.1", 12000)
 
     start = time.time()
