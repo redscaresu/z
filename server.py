@@ -31,8 +31,8 @@ while True:
             emoji = v
     
     #TODO assumption correct number of arguments, should be validated server and client side
-    if len(msg) > 2:
-        separator = msg[2]
+    if len(msg) > 3:
+        separator = msg[3]
     else:
         separator = ''
     
