@@ -38,10 +38,6 @@ if args.s is not None:
 else:
     separator = ""
 
-print(emoji)
-print(numEmojis)
-print(separator)
-
 message=f"{numEmojis}:{emoji}:{separator}"
 message=message.encode()
 
