@@ -38,9 +38,11 @@ while True:
 
     #handle translate flag, this is messy I should cast this back to a bool from a string
     translate = msg[2]
-    if not (translate != "True") or (translate != "False"):
+
+    t_set = accepted_strings = {"True", "False"}
+    if translate not in t_set:
         msg = ':'.join(msg)
-        print(f"`Unknown command: {msg}` TRANSLATE_FLAG does not exist, must be True or False")
+        print(f"`Unknown command: {msg}` TRANSLATE_FLAG invalid, must be True or False")
         continue
 
     if translate == "True":
