@@ -25,10 +25,19 @@ while True:
     #TODO input validation server side, emoji must exist in emoji dict else catch and exit
     emoji = msg[1]
 
-    #translate incomming emoji against dictionary
-    for k, v in dict_emoji.items():
-        if k == emoji:
-            emoji = v
+    translate = msg[2]
+    print(translate)
+    if translate == "True":
+        for k, v in dict_emoji.items():
+            if k == emoji:
+                emoji = k
+                emoji=f":{k}:"
+
+    else:
+        #translate incomming emoji against dictionary
+        for k, v in dict_emoji.items():
+            if k == emoji:
+                emoji = v
     
     #TODO assumption correct number of arguments, should be validated server and client side
     if len(msg) > 3:
