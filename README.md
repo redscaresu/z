@@ -1,5 +1,6 @@
 # EMOJIFY
 
+#docker build  
 docker build -t emojify-server:v1.0 .
 
 #run in interactive mode to see standard out  
