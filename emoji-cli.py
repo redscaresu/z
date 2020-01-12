@@ -45,7 +45,7 @@ translate = args.r
 message=f"{numEmojis}:{emoji}:{translate}:{separator}"
 # message = b'1:ok:sausage:'
 message=message.encode()
-print(translate)
+# print(translate)
 print(message)
 
 #create the client socket
