@@ -42,8 +42,9 @@ else:
 
 translate = args.r
 
-message=f"{numEmojis}:{emoji}:{translate}:{separator}"
-message=message.encode()
+# message=f"{numEmojis}:{emoji}:{translate}:{separator}"
+message = b'1:ok:False:'
+# message=message.encode()
 print(translate)
 print(message)
 

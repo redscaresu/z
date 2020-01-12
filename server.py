@@ -19,20 +19,35 @@ while True:
     msg = message.decode('unicode-escape')
     msg = msg.split(':')
 
-    #TODO input validation server side, repeat must be int, else catch and exit   
-    repeat = int(msg[0])
+    #input validation server side, first element of list must be int
+    repeat = (msg[0])
+    try:
+        repeat = int(repeat)
+    except ValueError:
+        msg = ':'.join(msg)
+        print(f"`Unknown command: {msg}` NUM_OF_EMOJIS must be int")
+        continue
+        
 
-    #TODO input validation server side, emoji must exist in emoji dict else catch and exit
+    #input validation server side, emoji must exist in emoji_dict
     emoji = msg[1]
+    if emoji not in dict_emoji:
+        msg = ':'.join(msg)
+        print(f"`Unknown command: {msg}` TYPE_OF_EMOJI does not exist")
+        continue
 
+    #handle translate flag, this is messy I should cast this back to a bool from a string
     translate = msg[2]
-    print(translate)
+    if not (translate != "True") or (translate != "False"):
+        msg = ':'.join(msg)
+        print(f"`Unknown command: {msg}` TRANSLATE_FLAG does not exist, must be True or False")
+        continue
+
     if translate == "True":
         for k, v in dict_emoji.items():
             if k == emoji:
                 emoji = k
                 emoji=f":{k}:"
-
     else:
         #translate incomming emoji against dictionary
         for k, v in dict_emoji.items():
