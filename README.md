@@ -1,4 +1,5 @@
 # EMOJIFY
+## Microservice with cli that provides server side rendering of emojis
 
 #### docker build ####  
 docker build -t emojify-server:v1.0 .
